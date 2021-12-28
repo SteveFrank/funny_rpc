@@ -1,0 +1,7 @@
+.idea
+funny_rpc_framework/funny_rpc_client/target
+funny_rpc_framework/funny_rpc_core/target
+funny_rpc_framework/funny_rpc_server/target
+funny_rpc_example/example_api/target
+funny_rpc_example/example_consumer/target
+funny_rpc_example/example_provider/target

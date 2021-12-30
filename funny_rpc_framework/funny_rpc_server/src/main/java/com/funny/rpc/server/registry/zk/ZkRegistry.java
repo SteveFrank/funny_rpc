@@ -32,7 +32,7 @@ public class ZkRegistry implements RpcRegistry {
         // 3、在代表接口的子节点下创建代表节点提供者的节点 （IP.PORT）
         Map<String, Object> beanListByAnnotationClass
                 = SpringBeanFactory.getBeanListByAnnotationClass(FRpcService.class);
-        for (String beanName : beanListByAnnotationClass.keySet()) {
+        if (beanListByAnnotationClass != null && beanListByAnnotationClass.size() > 0) {
             // 创建根节点（持久节点）
             serverZKClient.createRootNode();
             String ip = IpUtil.getRealIp();

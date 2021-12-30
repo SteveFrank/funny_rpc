@@ -18,6 +18,7 @@ public class RpcServerBootStrap {
     @PostConstruct
     public void initRpcServer() {
         // 初始化整个rpc服务端，引导项目的启动
+        rpcServerRunner.run();
     }
 
 }

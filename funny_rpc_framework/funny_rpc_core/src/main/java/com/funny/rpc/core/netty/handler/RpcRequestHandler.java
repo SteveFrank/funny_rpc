@@ -8,7 +8,6 @@ import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
 import lombok.extern.slf4j.Slf4j;
 
-import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
 /**
@@ -46,6 +45,7 @@ public class RpcRequestHandler extends SimpleChannelInboundHandler<RpcRequest> {
             response.setCause(e);
         } finally {
             log.error("rpc server response msg={}", response);
+            // 数据出站
             ctx.channel().writeAndFlush(response);
         }
 
